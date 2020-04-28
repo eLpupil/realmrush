@@ -6,10 +6,15 @@ using UnityEngine;
 public class PathFinder : MonoBehaviour
 {
     [SerializeField] Waypoint startWaypoint, endWaypoint;
-    Queue<Waypoint> queue = new Queue<Waypoint>();
-    [SerializeField] bool isRunning = true;
 
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+
+    Waypoint searchCenter;
+
+    Queue<Waypoint> queue = new Queue<Waypoint>();
+
+    bool isRunning = true;
+
     Vector2Int[] directions =
     {
         Vector2Int.up,
@@ -18,37 +23,7 @@ public class PathFinder : MonoBehaviour
         Vector2Int.left
     };
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        LoadBlocks();
-        ColorStartAndEnd();
-        Pathfind();
-    }
-
-    private void Pathfind()
-    {
-        queue.Enqueue(startWaypoint);
-        while (queue.Count > 0 && isRunning)
-        {
-            Waypoint searchCenter = queue.Dequeue();
-            print("searching from: " + searchCenter);
-            HaltIfEndFound(searchCenter);
-            searchCenter.isExplored = true;
-            ExploreNeighbors(searchCenter);
-        }
-        //todo work out path
-        print("End of Pathfinding");
-    }
-
-    private void HaltIfEndFound(Waypoint searchCenter)
-    {
-        if (searchCenter == endWaypoint)
-        {
-            print("reached the end");
-            isRunning = false;
-        }
-    }
+    [SerializeField] List<Waypoint> path = new List<Waypoint>();
 
     private void LoadBlocks()
     {
@@ -61,30 +36,51 @@ public class PathFinder : MonoBehaviour
             {
                 Debug.LogWarning("Duplicate block: " + gridPos);
             }
-            else {
+            else
+            {
                 grid.Add(gridPos, waypoint);
             }
         }
     }
 
     private void ColorStartAndEnd()
+        //todo consider moving out
     {
         startWaypoint.SetTopColor(Color.cyan);
         endWaypoint.SetTopColor(Color.magenta);
     }
 
-    private void ExploreNeighbors(Waypoint from)
+    private void BreadthFirstSearch()
+    {
+        queue.Enqueue(startWaypoint);
+        while (queue.Count > 0 && isRunning)
+        {
+            searchCenter = queue.Dequeue();
+            HaltIfEndFound();
+            searchCenter.isExplored = true;
+            ExploreNeighbors();
+        }
+    }
+
+    private void HaltIfEndFound()
+    {
+        if (searchCenter == endWaypoint)
+        {
+            isRunning = false;
+        }
+    }
+
+    private void ExploreNeighbors()
     {
         if (!isRunning) { return; }
         
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int neighborCoordinates = from.GetGridPos() + direction;
+            Vector2Int neighborCoordinates = searchCenter.GetGridPos() + direction;
             if (grid.ContainsKey(neighborCoordinates))
             {
                 Waypoint neighbor = grid[neighborCoordinates];
                 QueueNewNeighbor(neighbor);
-                neighbor.exploredFrom = from;
             }
         }
     }
@@ -98,7 +94,30 @@ public class PathFinder : MonoBehaviour
         else
         {
             queue.Enqueue(neighbor);
-            print("Queueing " + neighbor);
+            neighbor.exploredFrom = searchCenter;
         }
+    }
+
+    private void CreatePath()
+    {
+        Waypoint fromWaypoint = endWaypoint;
+        path.Add(fromWaypoint);
+
+        while (fromWaypoint != startWaypoint)
+        {
+            fromWaypoint = fromWaypoint.exploredFrom;
+            path.Add(fromWaypoint);
+        }
+
+        path.Reverse();
+    }
+
+    public List<Waypoint> GetPath()
+    {
+        LoadBlocks();
+        ColorStartAndEnd();
+        BreadthFirstSearch();
+        CreatePath();
+        return path;
     }
 }

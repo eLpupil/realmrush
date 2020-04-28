@@ -44,7 +44,6 @@ public class PathFinder : MonoBehaviour
     }
 
     private void ColorStartAndEnd()
-        //todo consider moving out
     {
         startWaypoint.SetTopColor(Color.cyan);
         endWaypoint.SetTopColor(Color.magenta);

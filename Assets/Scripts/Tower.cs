@@ -1,21 +1,44 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [Header("Tracking")]
-    [SerializeField] Transform objectToPan;
-    [SerializeField] Transform targetEnemy;
-
     [Header("Parameters")]
+    // Parameters of each tower
+    [SerializeField] Transform objectToPan;
+
     [SerializeField] float towerDamage = 5;
     [SerializeField] float attackRange = 30f;
 
     [SerializeField] ParticleSystem bullets;
 
+    // State of each tower
+    Transform targetEnemy;
+
+
     private void Start()
     {
+    }
+
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        SetTargetEnemy();
+        TrackAndFire();
+    }
+
+    private void SetTargetEnemy()
+    {
+        //collect all enemy objects on screen
+            //for each enemy calculate distance from tower
+            //update shortest distance
+            //return enemy object with shortest distance
+        //assign return object to targetEnemy
     }
 
     private void TrackAndFire()
@@ -31,13 +54,6 @@ public class Tower : MonoBehaviour
         {
             bulletsEmission.enabled = false;
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        TrackAndFire();
     }
 
     private bool enemyInRange()

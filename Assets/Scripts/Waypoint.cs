@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityStandardAssets.CrossPlatformInput;
 
 public class Waypoint : MonoBehaviour
 {
@@ -9,6 +8,8 @@ public class Waypoint : MonoBehaviour
     public Waypoint exploredFrom;
 
     const int gridSize = 10;
+
+    public bool isPlaceable = true;
 
     public int GetGridSize()
     {
@@ -29,12 +30,19 @@ public class Waypoint : MonoBehaviour
         topMeshRenderer.material.color = color;
     }
 
-    //private void OnMouseOver()
-    //{
-    //    if (CrossPlatformInputManager.GetButtonDown("Fire"))
-    //    {
-    //        Transform mousePosition = gameObject.transform;
-    //        print(mousePosition + " clicked");
-    //    }
-    //}
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (this.isPlaceable)
+            {
+                Transform mousePosition = gameObject.transform;
+                print(mousePosition + " clicked");
+            }
+            else
+            {
+                print("Tower can not be placed here.");
+            }
+        }
+    }
 }

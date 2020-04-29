@@ -94,15 +94,21 @@ public class PathFinder : MonoBehaviour
     private void CreatePath()
     {
         Waypoint fromWaypoint = endWaypoint;
-        path.Add(fromWaypoint);
+        AddToPath(fromWaypoint);
 
         while (fromWaypoint != startWaypoint)
         {
             fromWaypoint = fromWaypoint.exploredFrom;
-            path.Add(fromWaypoint);
+            AddToPath(fromWaypoint);
         }
 
         path.Reverse();
+    }
+
+    private void AddToPath(Waypoint fromWaypoint)
+    {
+        path.Add(fromWaypoint);
+        fromWaypoint.isPlaceable = false;
     }
 
     public List<Waypoint> GetPath() //cache invalidation for returning path

@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1795932139, guid: b21f3c380193623489cdc1c42e3f023b, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2365790043423505824, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_Name
@@ -3164,6 +3168,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1795932139, guid: b21f3c380193623489cdc1c42e3f023b, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795932139, guid: b21f3c380193623489cdc1c42e3f023b, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2365790043423505824, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_Name
@@ -5559,6 +5571,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113047839}
     m_Modifications:
+    - target: {fileID: 1795932139, guid: b21f3c380193623489cdc1c42e3f023b, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2365790043423505824, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_Name

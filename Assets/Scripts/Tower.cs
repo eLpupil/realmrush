@@ -27,17 +27,25 @@ public class Tower : MonoBehaviour
     private void SetTargetEnemy()
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
-        float closestDistance = Mathf.Infinity;
+        Transform closestEnemy = enemies[0].transform;
+
+        if (enemies.Length == 0) { return; }
 
         foreach (Enemy enemy in enemies)
         {
-            float distance = Vector3.Distance(enemy.transform.position, this.transform.position);
-            
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                targetEnemy = enemy.transform;
-            }
+            GetClosestEnemy(enemy.transform, closestEnemy);
+        }
+        targetEnemy = closestEnemy;
+    }
+
+    private void GetClosestEnemy(Transform transform, Transform closestEnemy)
+    {
+        float enemyToTowerDistance = Vector3.Distance(transform.position, gameObject.transform.position);
+        float closestEnemyToTowerDistance = Vector3.Distance(closestEnemy.position, gameObject.transform.position);
+
+        if (enemyToTowerDistance < closestEnemyToTowerDistance)
+        {
+            closestEnemy = transform;
         }
     }
 

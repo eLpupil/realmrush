@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1795932138}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Tower Type 1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4800,9 +4800,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 7187694023958527098}
-  targetEnemy: {fileID: 0}
-  towerDamage: 5
+  towerDamage: 1
   attackRange: 30
+  bullets: {fileID: 1795932139}
 --- !u!1001 &4656300519848366778
 PrefabInstance:
   m_ObjectHideFlags: 0

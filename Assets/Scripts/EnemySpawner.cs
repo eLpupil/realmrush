@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] EnemyMovement enemyPrefab; //The type limits the type of object that can be selected for the field
+    [SerializeField] Enemy enemyPrefab; //The type limits the type of object that can be selected for the field
     [SerializeField] Transform parent;
     [Range(0.1f, 5f)] [SerializeField] float secondsBetweenSpawns = 2f;
 
@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            EnemyMovement newUnit = Instantiate(enemyPrefab, transform.position, Quaternion.identity, parent);
+            Enemy newUnit = Instantiate(enemyPrefab, transform.position, Quaternion.identity, parent);
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
         

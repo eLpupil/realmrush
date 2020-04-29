@@ -17,14 +17,6 @@ public class Tower : MonoBehaviour
     // State of each tower
     Transform targetEnemy;
 
-
-    private void Start()
-    {
-    }
-
-
-
-
     // Update is called once per frame
     void Update()
     {
@@ -34,11 +26,19 @@ public class Tower : MonoBehaviour
 
     private void SetTargetEnemy()
     {
-        //collect all enemy objects on screen
-            //for each enemy calculate distance from tower
-            //update shortest distance
-            //return enemy object with shortest distance
-        //assign return object to targetEnemy
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Enemy enemy in enemies)
+        {
+            float distance = Vector3.Distance(enemy.transform.position, this.transform.position);
+            
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                targetEnemy = enemy.transform;
+            }
+        }
     }
 
     private void TrackAndFire()

@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionFX: {fileID: 0}
   hitFX: {fileID: 0}
-  hitPoints: 500
+  hitPoints: 25
 --- !u!114 &7803760254464184038
 MonoBehaviour:
   m_ObjectHideFlags: 0

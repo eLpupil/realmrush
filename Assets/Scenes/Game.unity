@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113047839}
     m_Modifications:
+    - target: {fileID: 1795932136, guid: b21f3c380193623489cdc1c42e3f023b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2365790043423505824, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_Name
@@ -143,6 +147,16 @@ PrefabInstance:
       propertyPath: bullets
       value: 
       objectReference: {fileID: 1093903333}
+    - target: {fileID: 3152689619804681892, guid: b21f3c380193623489cdc1c42e3f023b,
+        type: 3}
+      propertyPath: towerDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152689619804681892, guid: b21f3c380193623489cdc1c42e3f023b,
+        type: 3}
+      propertyPath: attackRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -156,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
@@ -1019,7 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f10d8f0c5d6247409ffe470bd4e26be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6980657529550604258, guid: ddb09a4cb4914774cbf4b97fcd4927d3,
+  enemyPrefab: {fileID: 7803760254464184038, guid: ddb09a4cb4914774cbf4b97fcd4927d3,
     type: 3}
   parent: {fileID: 327300948}
   secondsBetweenSpawns: 2
@@ -3146,6 +3160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113047839}
     m_Modifications:
+    - target: {fileID: 1795932136, guid: b21f3c380193623489cdc1c42e3f023b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2365790043423505824, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_Name
@@ -3161,10 +3179,20 @@ PrefabInstance:
       propertyPath: bullets
       value: 
       objectReference: {fileID: 1933874929}
+    - target: {fileID: 3152689619804681892, guid: b21f3c380193623489cdc1c42e3f023b,
+        type: 3}
+      propertyPath: towerDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152689619804681892, guid: b21f3c380193623489cdc1c42e3f023b,
+        type: 3}
+      propertyPath: attackRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
@@ -3174,7 +3202,7 @@ PrefabInstance:
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
@@ -4540,12 +4568,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1737139613}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1763098503 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1795932139, guid: b21f3c380193623489cdc1c42e3f023b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3909477893539404923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1785067506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5544,14 +5566,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3152689619804681892, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
-      propertyPath: targetEnemy
-      value: 
-      objectReference: {fileID: 327300948}
-    - target: {fileID: 3152689619804681892, guid: b21f3c380193623489cdc1c42e3f023b,
-        type: 3}
-      propertyPath: bullets
-      value: 
-      objectReference: {fileID: 1763098503}
+      propertyPath: attackRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5565,7 +5582,7 @@ PrefabInstance:
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}

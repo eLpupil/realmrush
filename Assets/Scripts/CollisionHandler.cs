@@ -9,11 +9,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] GameObject hitFX;
 
     [Header("Heatlh")]
-    [SerializeField] float hitPoints = 100f;
+    [SerializeField] float hitPoints = 20f;
     
-    Tower towerType1 = new Tower();
-
-    float damage;
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +20,7 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        switch (other.tag)
-        {
-            case "Tower Type 1":
-                damage = towerType1.GetTowerDamage(); //address the warning
-                break;
-            default:
-                damage = 1f;
-                break;
-        }
-
-        ProcessHit(damage); 
+        ProcessHit(); 
 
         if (hitPoints < 1)
         {
@@ -47,12 +34,12 @@ public class CollisionHandler : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void ProcessHit(float damage)
+    private void ProcessHit()
     {
         if (hitPoints > 0f)
         {
             //todo add hit animation hitFX
-            hitPoints = hitPoints - damage;
+            hitPoints = hitPoints - 1;
         }
     }
 }

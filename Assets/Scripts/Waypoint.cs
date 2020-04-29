@@ -11,6 +11,9 @@ public class Waypoint : MonoBehaviour
 
     public bool isPlaceable = true;
 
+    [SerializeField] Tower towerPrefab;
+    [SerializeField] Transform parent;
+
     public int GetGridSize()
     {
         return gridSize;
@@ -38,6 +41,8 @@ public class Waypoint : MonoBehaviour
             {
                 Transform mousePosition = gameObject.transform;
                 print(mousePosition + " clicked");
+                Tower tower = Instantiate(towerPrefab, mousePosition.position, Quaternion.identity, parent);
+                isPlaceable = false;
             }
             else
             {

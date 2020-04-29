@@ -33,20 +33,21 @@ public class Tower : MonoBehaviour
 
         foreach (Enemy enemy in enemies)
         {
-            GetClosestEnemy(enemy.transform, closestEnemy);
+           closestEnemy = GetClosestEnemy(enemy.transform, closestEnemy);
         }
         targetEnemy = closestEnemy;
     }
 
-    private void GetClosestEnemy(Transform transform, Transform closestEnemy)
+    private Transform GetClosestEnemy(Transform transformA, Transform transformB)
     {
-        float enemyToTowerDistance = Vector3.Distance(transform.position, gameObject.transform.position);
-        float closestEnemyToTowerDistance = Vector3.Distance(closestEnemy.position, gameObject.transform.position);
+        float distToA = Vector3.Distance(gameObject.transform.position, transformA.position);
+        float distToB = Vector3.Distance(gameObject.transform.position, transformB.position);
 
-        if (enemyToTowerDistance < closestEnemyToTowerDistance)
+        if (distToA < distToB)
         {
-            closestEnemy = transform;
+            return transformA;
         }
+        return transformB;
     }
 
     private void TrackAndFire()

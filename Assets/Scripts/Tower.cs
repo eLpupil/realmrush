@@ -29,6 +29,8 @@ public class Tower : MonoBehaviour
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         float closestDistance = Mathf.Infinity;
 
+        if (enemies.Length == 0) { return; }
+        
         foreach (Enemy enemy in enemies)
         {
             float distance = Vector3.Distance(enemy.transform.position, this.transform.position);

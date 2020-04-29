@@ -828,13 +828,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283278911}
-  m_LocalRotation: {x: 0.93233764, y: -0.066789284, z: 0.14727555, w: 0.32341236}
+  m_LocalRotation: {x: 0.33067486, y: -0.08404543, z: 0.06652976, w: 0.9376377}
   m_LocalPosition: {x: 17.5, y: 30.6, z: -5.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 141.484, y: -17.20398, z: 2.144989}
+  m_LocalEulerAnglesHint: {x: 140.855, y: 171.577, z: 185.118}
 --- !u!1001 &309011083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2045,18 +2045,6 @@ PrefabInstance:
     - target: {fileID: 4135240793724244, guid: 700ff3467e6f35c4d9307b685e8746d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135240793724244, guid: 700ff3467e6f35c4d9307b685e8746d1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135240793724244, guid: 700ff3467e6f35c4d9307b685e8746d1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4135240793724244, guid: 700ff3467e6f35c4d9307b685e8746d1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 700ff3467e6f35c4d9307b685e8746d1, type: 3}
@@ -5563,11 +5551,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 3152689619804681892, guid: b21f3c380193623489cdc1c42e3f023b,
-        type: 3}
-      propertyPath: attackRange
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7398853362430475889, guid: b21f3c380193623489cdc1c42e3f023b,
         type: 3}

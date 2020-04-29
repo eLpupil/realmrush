@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityStandardAssets.CrossPlatformInput;
 
 public class Waypoint : MonoBehaviour
 {
@@ -27,4 +28,13 @@ public class Waypoint : MonoBehaviour
         MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
         topMeshRenderer.material.color = color;
     }
+
+    //private void OnMouseOver()
+    //{
+    //    if (CrossPlatformInputManager.GetButtonDown("Fire"))
+    //    {
+    //        Transform mousePosition = gameObject.transform;
+    //        print(mousePosition + " clicked");
+    //    }
+    //}
 }

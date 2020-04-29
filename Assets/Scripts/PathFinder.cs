@@ -43,12 +43,6 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-    private void ColorStartAndEnd()
-    {
-        startWaypoint.SetTopColor(Color.cyan);
-        endWaypoint.SetTopColor(Color.magenta);
-    }
-
     private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
@@ -116,7 +110,6 @@ public class PathFinder : MonoBehaviour
         if (path.Count == 0)
         {
             LoadBlocks();
-            ColorStartAndEnd();
             BreadthFirstSearch();
             CreatePath();
         }

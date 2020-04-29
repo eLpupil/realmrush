@@ -105,7 +105,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -4801,7 +4801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 7187694023958527098}
   towerDamage: 1
-  attackRange: 30
+  attackRange: 40
   bullets: {fileID: 1795932139}
 --- !u!1001 &4656300519848366778
 PrefabInstance:

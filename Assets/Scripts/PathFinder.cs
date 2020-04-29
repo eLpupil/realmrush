@@ -111,12 +111,15 @@ public class PathFinder : MonoBehaviour
         path.Reverse();
     }
 
-    public List<Waypoint> GetPath()
+    public List<Waypoint> GetPath() //cache invalidation for returning path
     {
-        LoadBlocks();
-        ColorStartAndEnd();
-        BreadthFirstSearch();
-        CreatePath();
+        if (path.Count == 0)
+        {
+            LoadBlocks();
+            ColorStartAndEnd();
+            BreadthFirstSearch();
+            CreatePath();
+        }
         return path;
     }
 }

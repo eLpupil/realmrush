@@ -121,4 +121,9 @@ public class PathFinder : MonoBehaviour
         }
         return path;
     }
+
+    public Waypoint GetEndWayPoint()
+    {
+        return endWaypoint;
+    }
 }

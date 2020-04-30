@@ -23,10 +23,4 @@ public class EnemyMovement : MonoBehaviour
             yield return new WaitForSeconds(movementPeriod);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

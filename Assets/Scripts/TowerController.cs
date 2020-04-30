@@ -28,7 +28,7 @@ public class TowerController : MonoBehaviour
         oldTower.transform.position = newBaseWaypoint.transform.position;
         oldTower.baseWaypoint.isPlaceable = true;
         oldTower.baseWaypoint = newBaseWaypoint;
-        oldTower.baseWaypoint.isPlaceable = false;
+        newBaseWaypoint.isPlaceable = false;
         towerQueue.Enqueue(oldTower);
     }
 

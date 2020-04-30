@@ -12,7 +12,6 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] float hitPoints = 20f;
     [SerializeField] Transform garbageCollector;
 
-    PathFinder path;
 
     private void OnParticleCollision(GameObject other)
     {
@@ -40,24 +39,6 @@ public class CollisionHandler : MonoBehaviour
         {
             hitParticlePrefab.Play();
             hitPoints = hitPoints - 1;
-        }
-    }
-
-    private void Start()
-    {
-        path = FindObjectOfType<PathFinder>();
-    }
-
-    private void Update()
-    {
-        Waypoint endPoint = path.GetEndWayPoint();
-        Vector2 endPointPosition = endPoint.GetGridPos();
-        int gridSize = endPoint.GetGridSize();
-
-        Vector2 enemyVector2 = new Vector2(transform.position.x/gridSize, transform.position.z/gridSize);
-        if (enemyVector2 == endPointPosition)
-        {
-            DestroyEnemy();
         }
     }
 }

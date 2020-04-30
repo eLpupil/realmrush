@@ -18,11 +18,10 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i < 10; i++)
+        while (true)
         {
             Enemy newUnit = Instantiate(enemyPrefab, transform.position, Quaternion.identity, parent);
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
-        
     }
 }

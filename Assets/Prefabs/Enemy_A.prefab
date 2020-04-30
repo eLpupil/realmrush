@@ -48,7 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922f98027c676fa4e9dd59c27595bf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementPeriod: 1
+  movementPeriod: 0.25
+  explosionPrefab: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
+    type: 3}
 --- !u!114 &1704881321
 MonoBehaviour:
   m_ObjectHideFlags: 0

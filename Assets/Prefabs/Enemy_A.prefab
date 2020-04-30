@@ -60,10 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c853d7ce7536d9d4782d1fb918c3453f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 1929956291960174, guid: 1a51bfda454239a41afb7dee687c6ac0,
+  explosionPrefab: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
     type: 3}
   hitParticlePrefab: {fileID: 198801792051776036}
-  parent: {fileID: 0}
   hitPoints: 15
 --- !u!114 &7803760254464184038
 MonoBehaviour:

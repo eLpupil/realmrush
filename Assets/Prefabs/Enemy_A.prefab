@@ -66,7 +66,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
     type: 3}
   hitParticlePrefab: {fileID: 198801792051776036}
-  hitPoints: 15
+  hitPoints: 10
   garbageCollector: {fileID: 0}
 --- !u!114 &7803760254464184038
 MonoBehaviour:

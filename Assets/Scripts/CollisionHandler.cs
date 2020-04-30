@@ -32,6 +32,8 @@ public class CollisionHandler : MonoBehaviour
     {
         ParticleSystem deathFX = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         deathFX.Play();
+        float delay = deathFX.main.duration;
+        Destroy(gameObject, delay);
         Destroy(gameObject);
     }
 

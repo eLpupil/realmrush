@@ -5,8 +5,9 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
     [Header("Effects")]
-    [SerializeField] GameObject explosionFX;
-    [SerializeField] GameObject hitFX;
+    [SerializeField] GameObject explosionPrefab;
+    [SerializeField] ParticleSystem hitParticlePrefab;
+    [SerializeField] Transform parent;
 
     [Header("Heatlh")]
     [SerializeField] float hitPoints = 20f;
@@ -30,7 +31,8 @@ public class CollisionHandler : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        //todo add explosionFX 
+        GameObject deathFX = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        deathFX.transform.parent = parent;
         Destroy(gameObject);
     }
 
@@ -38,7 +40,7 @@ public class CollisionHandler : MonoBehaviour
     {
         if (hitPoints > 0f)
         {
-            //todo add hit animation hitFX
+            hitParticlePrefab.Play();
             hitPoints = hitPoints - 1;
         }
     }

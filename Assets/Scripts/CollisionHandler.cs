@@ -10,13 +10,8 @@ public class CollisionHandler : MonoBehaviour
 
     [Header("Heatlh")]
     [SerializeField] float hitPoints = 20f;
+    [SerializeField] Transform garbageCollector;
     
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
 
     private void OnParticleCollision(GameObject other)
     {
@@ -30,10 +25,11 @@ public class CollisionHandler : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        ParticleSystem deathFX = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        deathFX.Play();
+        ParticleSystem deathFX = Instantiate(explosionPrefab, transform.position, Quaternion.identity, garbageCollector);
         float delay = deathFX.main.duration;
-        Destroy(gameObject, delay);
+
+        deathFX.Play();
+        Destroy(deathFX.gameObject, delay);
         Destroy(gameObject);
     }
 

@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
-    [SerializeField] int towerLimit;
+    [SerializeField] int towerLimit = 5;
     [SerializeField] Tower towerPrefab;
     [SerializeField] Transform parent;
 
-    Queue<Tower> towers = new Queue<Tower>();
+    Queue<Tower> towerQueue = new Queue<Tower>();
 
     public void AddTower(Waypoint baseWaypoint)
     {
-        if (towers.Count == towerLimit)
+        if (towerQueue.Count == towerLimit)
         {
-            DestroyAndDequeueTower();
-            AddAndQueueTower(baseWaypoint);
+            MoveExistingTower(baseWaypoint);
         }
         else
         {
@@ -23,15 +22,20 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    private void DestroyAndDequeueTower()
+    private void MoveExistingTower(Waypoint newBaseWaypoint)
     {
-        Tower towerRemoved = towers.Dequeue();
-        Destroy(towerRemoved);
+        Tower oldTower = towerQueue.Dequeue();
+        oldTower.transform.position = newBaseWaypoint.transform.position;
+        oldTower.baseWaypoint.isPlaceable = true;
+        oldTower.baseWaypoint = newBaseWaypoint;
+        towerQueue.Enqueue(oldTower);
     }
 
-    private void AddAndQueueTower(Waypoint baseWaypoint)
+    private void AddAndQueueTower(Waypoint newBaseWaypoint)
     {
-        Tower newTower = Instantiate(towerPrefab, baseWaypoint.transform.position, Quaternion.identity, parent);
-        towers.Enqueue(newTower);
+        Tower newTower = Instantiate(towerPrefab, newBaseWaypoint.transform.position, Quaternion.identity, parent);
+        newBaseWaypoint.isPlaceable = false;
+        newTower.baseWaypoint = newBaseWaypoint;
+        towerQueue.Enqueue(newTower);
     }
 }

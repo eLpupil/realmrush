@@ -14,6 +14,8 @@ public class Tower : MonoBehaviour
 
     [SerializeField] ParticleSystem bullets;
 
+    public Waypoint baseWaypoint; 
+
     // State of each tower
     Transform targetEnemy;
 

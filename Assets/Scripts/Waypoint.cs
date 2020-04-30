@@ -31,13 +31,11 @@ public class Waypoint : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (this.isPlaceable)
             {
-                TowerController towerController = new TowerController();
-                towerController.AddTower(this);
-                isPlaceable = false;
+                FindObjectOfType<TowerController>().AddTower(this);
             }
             else
             {

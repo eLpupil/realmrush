@@ -10,7 +10,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Transform parent;
     [Range(0.1f, 5f)] [SerializeField] float secondsBetweenSpawns = 2f;
 
-    [SerializeField] Text countText;
+    [SerializeField] Text enemiesSpawned;
+    int score;
 
 
     // Start is called before the first frame update
@@ -23,14 +24,15 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
+            IncreaseScore();
             Enemy newUnit = Instantiate(enemyPrefab, transform.position, Quaternion.identity, parent);
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
     }
 
-    private void Update()
+    private void IncreaseScore()
     {
-        int enemyCount = FindObjectsOfType<Enemy>().Length;
-        countText.text = enemyCount.ToString();
+        score++;
+        enemiesSpawned.text = score.ToString();
     }
 }

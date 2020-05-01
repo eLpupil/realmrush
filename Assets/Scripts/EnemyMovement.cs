@@ -25,9 +25,9 @@ public class EnemyMovement : MonoBehaviour
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(movementPeriod);
         }
-        DestroyEnemy();
-        FindObjectOfType<BaseHealth>().DecreaseHealth();
 
+        DestroyEnemy();
+        FindObjectOfType<BaseHealth>().StartEnemyContactSequence();
     }
 
     private void DestroyEnemy()

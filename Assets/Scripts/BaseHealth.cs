@@ -9,13 +9,15 @@ public class BaseHealth : MonoBehaviour
     [SerializeField] int hpDecrease = 1;
 
     [SerializeField] Text baseHPText;
+    [SerializeField] AudioClip enemyDeathSFX;
 
 
-    public void DecreaseHealth()
+    public void StartEnemyContactSequence()
     {
         if (hitPoints > 0)
         {
             hitPoints = hitPoints - hpDecrease;
+            GetComponent<AudioSource>().PlayOneShot(enemyDeathSFX);
         }
         if (hitPoints < hpDecrease)
         {

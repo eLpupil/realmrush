@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   intensity:
     overrideState: 1
-    value: 0.36
+    value: 0.78
   threshold:
     overrideState: 1
-    value: 0.66
+    value: 0.65
   softKnee:
     overrideState: 1
     value: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -87,8 +87,8 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 0
-    value: 0
+    value: 34
   tint:
     overrideState: 0
     value: 11
@@ -128,7 +128,7 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 37
+    value: 54
   brightness:
     overrideState: 0
     value: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 1
-    value: 78
+    value: 57
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -167,13 +167,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: 0.020040058}
+    value: {x: 1, y: 1, z: 1, w: -0.040080186}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: 0.5611223}
+    value: {x: 1, y: 1, z: 1, w: 0.08016031}
   gain:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: -0.02004009}
+    value: {x: 1, y: 1, z: 1, w: 0.3406814}
   masterCurve:
     overrideState: 0
     value:
@@ -1401,10 +1401,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.45
+    value: 0.43
   smoothness:
     overrideState: 1
-    value: 0.2
+    value: 0.321
   roundness:
     overrideState: 1
     value: 1

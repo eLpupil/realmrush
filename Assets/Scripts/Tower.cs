@@ -75,12 +75,6 @@ public class Tower : MonoBehaviour
     {
         return Vector3.Distance(targetEnemy.position, objectToPan.position) <= attackRange;
     }
-
-    public float GetTowerDamage()
-    {
-        return towerDamage;
-    }
-
 }
 
 

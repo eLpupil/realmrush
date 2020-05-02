@@ -27,7 +27,8 @@ public class EnemyMovement : MonoBehaviour
         }
 
         DestroyEnemy();
-        FindObjectOfType<BaseHealth>().StartEnemyContactSequence();
+        FindObjectOfType<EnemySpawner>().numberDestroyed++;
+        FindObjectOfType<BaseHealth>().ProcessEnemyHitBase();
     }
 
     private void DestroyEnemy()

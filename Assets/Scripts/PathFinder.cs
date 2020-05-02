@@ -25,6 +25,13 @@ public class PathFinder : MonoBehaviour
 
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
 
+    private void Start()
+    {
+        LoadBlocks();
+        BreadthFirstSearch();
+        CreatePath();
+    }
+
     private void LoadBlocks()
     {
         Waypoint[] WaypointList = FindObjectsOfType<Waypoint>();

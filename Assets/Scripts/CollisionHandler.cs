@@ -21,6 +21,7 @@ public class CollisionHandler : MonoBehaviour
         if (hitPoints < 1)
         {
             DestroyEnemy();
+            FindObjectOfType<EnemySpawner>().numberDestroyed++;
         }
     }
 

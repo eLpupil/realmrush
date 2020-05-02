@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerController : MonoBehaviour
 {
     [SerializeField] int towerLimit = 5;
     [SerializeField] Tower towerPrefab;
     [SerializeField] Transform parent;
+
+    [SerializeField] Text towerLimitText;
 
     Queue<Tower> towerQueue = new Queue<Tower>();
 
@@ -38,5 +41,10 @@ public class TowerController : MonoBehaviour
         newBaseWaypoint.isPlaceable = false;
         newTower.baseWaypoint = newBaseWaypoint;
         towerQueue.Enqueue(newTower);
+    }
+
+    private void Update()
+    {
+        towerLimitText.text = "Tower Limit: " + towerLimit.ToString();
     }
 }

@@ -31,7 +31,7 @@ public class Waypoint : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             if (this.isPlaceable)
             {

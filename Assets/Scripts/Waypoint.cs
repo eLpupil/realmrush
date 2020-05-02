@@ -11,9 +11,6 @@ public class Waypoint : MonoBehaviour
 
     public bool isPlaceable = true;
 
-    [SerializeField] Tower towerPrefab;
-    [SerializeField] Transform parent;
-
     public int GetGridSize()
     {
         return gridSize;
@@ -32,17 +29,13 @@ public class Waypoint : MonoBehaviour
         MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
         topMeshRenderer.material.color = color;
     }
-
     private void OnMouseOver()
     {
         if (Input.GetMouseButton(0))
         {
             if (this.isPlaceable)
             {
-                Transform mousePosition = gameObject.transform;
-                print(mousePosition + " clicked");
-                Tower tower = Instantiate(towerPrefab, mousePosition.position, Quaternion.identity, parent);
-                isPlaceable = false;
+                FindObjectOfType<TowerController>().AddTower(this);
             }
             else
             {

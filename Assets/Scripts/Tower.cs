@@ -13,6 +13,9 @@ public class Tower : MonoBehaviour
     [SerializeField] float attackRange = 30f;
 
     [SerializeField] ParticleSystem bullets;
+    [SerializeField] AudioClip bulletSFX;
+
+    public Waypoint baseWaypoint; 
 
     // State of each tower
     Transform targetEnemy;
@@ -51,6 +54,7 @@ public class Tower : MonoBehaviour
         {
             objectToPan.LookAt(targetEnemy);
             bulletsEmission.enabled = true;
+            PlayBulletSFX();
         }
         else
         {
@@ -58,16 +62,19 @@ public class Tower : MonoBehaviour
         }
     }
 
+    private void PlayBulletSFX()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(bulletSFX);
+        }
+    }
+
     private bool enemyInRange()
     {
         return Vector3.Distance(targetEnemy.position, objectToPan.position) <= attackRange;
     }
-
-    public float GetTowerDamage()
-    {
-        return towerDamage;
-    }
-
 }
 
 

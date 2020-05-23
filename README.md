@@ -1,7 +1,6 @@
 # realmrush
-tower defense game
+tower defense game developed with C# and Unity.
 
-A simple tower defense game developed with C# and Unity.
 Great project for understanding and implementing ring buffers/circular queues and Breadth's First Search path algorithm.
 
 
